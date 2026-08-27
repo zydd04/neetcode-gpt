@@ -8,14 +8,11 @@ class Solution:
         # z is a 1D NumPy array
         # Formula: 1 / (1 + e^(-z))
         # return np.round(your_answer, 5)
-        for i in range(len(z)):
-            x = 1 / (1+np.exp(-z[i]))
-            z[i] = np.round(x, 5)
-        return z
+        
+        x = 1 / (1+np.exp(-z))
+        return np.round(x, 5)
 
     def relu(self, z: NDArray[np.float64]) -> NDArray[np.float64]:
         # z is a 1D NumPy array
         # Formula: max(0, z) element-wise
-        for i in range(len(z)):
-            z[i] = max(z[i], 0)
-        return z
+        return np.maximum(0, z)
